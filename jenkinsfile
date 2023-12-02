@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                // Code to build the project
+                echo 'Building...'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                // Code to run tests
+                echo 'Testing...'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                // Code to deploy the application
+                echo 'Deploying...'
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Pipeline succeeded! Send notifications, etc.'
+        }
+        failure {
+            echo 'Pipeline failed! Send notifications, etc.'
+        }
+    }
+}
